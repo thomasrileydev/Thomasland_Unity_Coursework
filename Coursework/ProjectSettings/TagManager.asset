@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - UI
+  - Invisable
+  - Boundary
+  - Forest
+  - ForestBoundary
+  - GrasslandBoundary
+  - HillsBoundary
+  - DesertBoundary
+  - Hills
+  - Desert
+  - Grassland
+  - Enemy
+  - PlayerCharge
+  - Enemycharger
+  - Ground
+  - MountainousBoundary
+  - Mountainous
+  - BoulderCollectable
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - Collectables
+  - AudioPlay
+  - Ground
+  - Objects
+  - AI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
