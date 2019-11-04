@@ -1,10 +1,9 @@
 using System;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
-    [RequireComponent(typeof (NavMeshAgent))]
+    [RequireComponent(typeof (UnityEngine.AI.NavMeshAgent))]
     [RequireComponent(typeof (ThirdPersonCharacter))]
     public class AICharacterControl : MonoBehaviour
     {
@@ -16,7 +15,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private void Start()
         {
             // get the components on the object we need ( should not be null due to require component so no need to check )
-            agent = GetComponentInChildren<NavMeshAgent>();
+            agent = GetComponentInChildren<UnityEngine.AI.NavMeshAgent>();
             character = GetComponent<ThirdPersonCharacter>();
 
 	        agent.updateRotation = false;

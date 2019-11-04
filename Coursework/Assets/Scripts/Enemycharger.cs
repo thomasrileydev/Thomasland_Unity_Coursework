@@ -10,7 +10,7 @@ public class Enemycharger : MonoBehaviour {
 
         if (other.CompareTag("Enemycharger"))
         {
-            Debug.Log(healthscript.Health);         
+            //Debug.Log(healthscript.Health);         
             
                 healthscript.Health = healthscript.Health - 1;
            

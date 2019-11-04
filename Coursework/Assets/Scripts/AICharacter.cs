@@ -16,11 +16,10 @@ public class AICharacter : MonoBehaviour
     private NavMeshPath path;
     
 
-    private float elapsed = 0.0f;
+
     public void Start()
     {
         path = new NavMeshPath();
-        elapsed = 0.0f;
         StartCoroutine(CalculatePath());
     }
     IEnumerator CalculatePath()

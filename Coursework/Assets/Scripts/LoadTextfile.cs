@@ -10,16 +10,17 @@ public class LoadTextfile : MonoBehaviour
     private string Save_Whole;
     private int counter = 0;
     private int counter_one = 0;
-    [HideInInspector] public float tempx,tempy,tempz,temprx,tempry,temprz;
-    public GameObject[] allObjects;
-    [HideInInspector] public string[] LoadedList = new string[21];
-    [HideInInspector] public string[] LoadedVariableList = new string[6];
+    public float tempx,tempy,tempz,temprx,tempry,temprz; //[HideInInspector] 
+    public Transform[] allObjects;
+    public string[] LoadedList = new string[21]; //[HideInInspector] 
+    public string[] LoadedVariableList = new string[6]; //[HideInInspector] 
 
     public HealthScript HealthScript;
     public DayNight DayNight;
     public CollectablesScript CollectablesScript;
     public POV POV;
-
+    // HEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY Remember this! The file reads Player back TWICE for some reason. Reinstate is isolated so we can see the values loaded.
+    // Plan: make it read back the values ONCE for player. Might be some weird thing we've done in Load or Loadtextfile. Then reinstate Reinstate when they load correctly. 
     public IEnumerator ReadString()
     {
         
@@ -29,7 +30,7 @@ public class LoadTextfile : MonoBehaviour
             string path = Application.persistentDataPath + "\\" + "ThomasLand" + "/" + Save_Whole + ".txt";
             StreamReader reader = new StreamReader(path);
             
-                while (counter <= 20)
+                while (counter < 21)
                 {
 
                 LoadedList[counter] = reader.ReadLine();
@@ -47,7 +48,7 @@ public class LoadTextfile : MonoBehaviour
         string VariablePath = Application.persistentDataPath + "\\" + "ThomasLand" + "/" + Save_Whole + "Variables.txt";
         StreamReader Variablereader = new StreamReader(VariablePath);
 
-        while (counter <= 5)
+        while (counter < 6)
         {
             LoadedVariableList[counter] = Variablereader.ReadLine();
 
@@ -62,14 +63,15 @@ public class LoadTextfile : MonoBehaviour
     }
     public void Reinstate()
     {
-      UnityEngine.Object[] allObjects = FindObjectsOfType(typeof(Transform));
+     // UnityEngine.Object[] allObjects = FindObjectsOfType(typeof(Transform));
        foreach (Transform obj in allObjects)
         {
-            for (counter_one = 0; counter_one <= 20; counter_one++)
+            //for (counter_one = 0; counter_one < 21; counter_one++)
+            for (counter_one=0; counter_one<=3; counter_one++)
             {
                 Debug.Log(counter_one);
                 if (obj.name == LoadedList[counter_one])
-                {
+               {
 
                     float tempx = float.Parse(LoadedList[counter_one + 1]);
                     float tempy = float.Parse(LoadedList[counter_one + 2]);

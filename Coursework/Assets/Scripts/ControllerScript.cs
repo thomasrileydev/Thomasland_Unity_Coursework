@@ -5,7 +5,10 @@ using UnityEngine;
 public class ControllerScript : MonoBehaviour {
     public GameObject Menu;
     //public GameObject Options;
-    
+    public HealthScript HealthScript;
+    private int RegenerationHealth=1;
+    public int RegenTimer;
+
     private int counter = 0;
     public void Start()
     {
@@ -48,6 +51,24 @@ public class ControllerScript : MonoBehaviour {
                 }
             }*/
         }
+    }
+    public IEnumerator RegenHealth() //for wrench script called when spanners collected to regenerate health
+    {
+        if (HealthScript.Health < 100)
+        {
+            HealthScript.Health += RegenerationHealth;
+            Debug.Log(HealthScript.Health);
+            yield return new WaitForSeconds(RegenTimer);
+            StartCoroutine(RegenHealth());
+        }
+        else
+        {
+            StopCoroutine("RegenHealth");
+        }
+    }
+    public void InitializeRegen() 
+    {
+        StartCoroutine(RegenHealth());
     }
 
 }
