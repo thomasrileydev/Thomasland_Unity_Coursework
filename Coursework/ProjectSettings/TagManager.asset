@@ -26,6 +26,7 @@ TagManager:
   - Box2
   - Box3
   - Box4
+  - Rocket
   layers:
   - Default
   - TransparentFX

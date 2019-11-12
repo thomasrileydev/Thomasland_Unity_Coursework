@@ -9,10 +9,11 @@ public class RocketParts : MonoBehaviour {
     private string Box3 = "Box3";
     private string Box4 = "Box4";
 
-    private bool Collected1;
-    private bool Collected2;
-    private bool Collected3;
-    private bool Collected4;
+    [HideInInspector] public bool Collected1;
+    [HideInInspector] public bool Collected2;
+    [HideInInspector] public bool Collected3;
+    [HideInInspector] public bool Collected4;
+    public RocketLaunch RocketLaunch;
 
     public GameObject Crate1;
     public GameObject Crate2;
@@ -24,7 +25,7 @@ public class RocketParts : MonoBehaviour {
     public GameObject RocketPart3;
 
     public Slider RocketProgress;
-
+    //public void Start() { Collected1 = true; Collected2 = true; Collected3 = true; Collected4 = true; Rocket.SetActive(true); }
     public void OnTriggerEnter(Collider other)
     {
        
@@ -70,6 +71,14 @@ public class RocketParts : MonoBehaviour {
                 Rocket.SetActive(true);
                 RocketProgress.value = 4;
 
+            }
+            
+         if (Collected4 == true)
+            {
+                if (other.CompareTag("Rocket"))
+                {
+                    RocketLaunch.CountdownInitialize();
+                }
             }
         }
     }

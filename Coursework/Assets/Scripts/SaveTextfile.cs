@@ -14,6 +14,7 @@ public class SaveTextfile : MonoBehaviour
     public DayNight DayNight;
     public CollectablesScript CollectablesScript;
     public POV POV;
+    public RocketParts RocketParts;
 
     public void WriteString()
     {
@@ -34,7 +35,7 @@ public class SaveTextfile : MonoBehaviour
         foreach (GameObject obj in allObjects)
         {
             toSave = obj.name + Environment.NewLine + obj.transform.position.x.ToString() + Environment.NewLine + obj.transform.position.y.ToString() + Environment.NewLine + obj.transform.position.z.ToString() + Environment.NewLine + obj.transform.eulerAngles.x.ToString() + Environment.NewLine + obj.transform.eulerAngles.y.ToString() + Environment.NewLine + obj.transform.eulerAngles.z.ToString();
-            VariablesToSave = HealthScript.Health.ToString() + Environment.NewLine + HealthScript.Battery.ToString() + Environment.NewLine + DayNight.currentTimeOfDay.ToString() + Environment.NewLine + POV.ThirdP.enabled.ToString() + Environment.NewLine + POV.FirstP.enabled.ToString() + Environment.NewLine + CollectablesScript.AddOn.activeSelf.ToString();
+            VariablesToSave = HealthScript.Health.ToString() + Environment.NewLine + HealthScript.Battery.ToString() + Environment.NewLine + DayNight.currentTimeOfDay.ToString() + Environment.NewLine + POV.ThirdP.enabled.ToString() + Environment.NewLine + POV.FirstP.enabled.ToString() + Environment.NewLine + CollectablesScript.AddOn.activeSelf.ToString() + Environment.NewLine + RocketParts.Collected1.ToString() + Environment.NewLine + RocketParts.Collected2.ToString() + Environment.NewLine + RocketParts.Collected3.ToString() + Environment.NewLine + RocketParts.Collected4.ToString();
             string path = Application.persistentDataPath + "\\" + "ThomasLand" + "/" + Save_Whole + ".txt";
             StreamWriter writer = new StreamWriter(path, true);
             

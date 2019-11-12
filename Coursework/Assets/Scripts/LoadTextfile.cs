@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
+using UnityEngine.SceneManagement;
+
 public class LoadTextfile : MonoBehaviour
 {
     private string Save_Part_1 = "Save";
@@ -13,14 +15,17 @@ public class LoadTextfile : MonoBehaviour
     public float tempx,tempy,tempz,temprx,tempry,temprz; //[HideInInspector] 
     public Transform[] allObjects;
     public string[] LoadedList = new string[21]; //[HideInInspector] 
-    public string[] LoadedVariableList = new string[6]; //[HideInInspector] 
+    public string[] LoadedVariableList = new string[10]; //[HideInInspector] 
 
     public HealthScript HealthScript;
     public DayNight DayNight;
     public CollectablesScript CollectablesScript;
     public POV POV;
+    public RocketParts RocketParts;
     // HEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY Remember this! The file reads Player back TWICE for some reason. Reinstate is isolated so we can see the values loaded.
-    // Plan: make it read back the values ONCE for player. Might be some weird thing we've done in Load or Loadtextfile. Then reinstate Reinstate when they load correctly. 
+    // Plan: make it read back the values ONCE for player. Might be some weird thing we've done in Load or Loadtextfile. Then reinstate Reinstate when they load correctly.
+    // fixed turns out that the load routine was highly ineficiant and was causing it to repeat
+   
     public IEnumerator ReadString()
     {
         
@@ -48,7 +53,7 @@ public class LoadTextfile : MonoBehaviour
         string VariablePath = Application.persistentDataPath + "\\" + "ThomasLand" + "/" + Save_Whole + "Variables.txt";
         StreamReader Variablereader = new StreamReader(VariablePath);
 
-        while (counter < 6)
+        while (counter < 10)
         {
             LoadedVariableList[counter] = Variablereader.ReadLine();
 
@@ -56,15 +61,17 @@ public class LoadTextfile : MonoBehaviour
         }
         Variablereader.Close();
         counter = 0;
-
+       
+       
         yield return (LoadedList);
         yield return (LoadedVariableList);
 
     }
     public void Reinstate()
     {
-     // UnityEngine.Object[] allObjects = FindObjectsOfType(typeof(Transform));
-       foreach (Transform obj in allObjects)
+       
+        // UnityEngine.Object[] allObjects = FindObjectsOfType(typeof(Transform));
+        foreach (Transform obj in allObjects)
         {
             //for (counter_one = 0; counter_one < 21; counter_one++)
             for (counter_one=0; counter_one<=3; counter_one++)
@@ -106,7 +113,41 @@ public class LoadTextfile : MonoBehaviour
             CollectablesScript.Collectable.SetActive(false);
         }
 
-           
+        RocketParts.RocketPart1.SetActive (false); RocketParts.RocketPart2.SetActive(false); RocketParts.RocketPart3.SetActive(false); RocketParts.Rocket.SetActive(false);
+        RocketParts.Collected1=(bool.Parse(LoadedVariableList[6]));
+        if (RocketParts.Collected1 == true)
+        {
+            RocketParts.Crate1.SetActive(false);
+            RocketParts.RocketPart1.SetActive(true);
+            RocketParts.RocketProgress.value = 1;
+        }
+
+        RocketParts.Collected2 = (bool.Parse(LoadedVariableList[7]));
+        if (RocketParts.Collected2 == true)
+        {
+            RocketParts.Crate2.SetActive(false);
+            RocketParts.RocketPart1.SetActive(false);
+            RocketParts.RocketPart2.SetActive(true);
+            RocketParts.RocketProgress.value = 2;
+        }
+
+        RocketParts.Collected3 = (bool.Parse(LoadedVariableList[8]));
+        if (RocketParts.Collected3 == true)
+        {
+            RocketParts.Crate3.SetActive(false);
+            RocketParts.RocketPart2.SetActive(false);
+            RocketParts.RocketPart3.SetActive(true);
+            RocketParts.RocketProgress.value = 3;
+        }
+
+        RocketParts.Collected4 = (bool.Parse(LoadedVariableList[9]));
+        if (RocketParts.Collected4 == true)
+        {
+            RocketParts.Crate4.SetActive(false);
+            RocketParts.RocketPart3.SetActive(false);
+            RocketParts.Rocket.SetActive(true);
+            RocketParts.RocketProgress.value = 4;
+        }
 
 
     }
