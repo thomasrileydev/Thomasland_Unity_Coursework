@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.AppCenter.Push</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.AppCenter.Push.Push">
+            <summary>
+            Push feature.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AppCenter.Push.Push.CheckLaunchedFromNotification(Windows.ApplicationModel.Activation.LaunchActivatedEventArgs)">
+            <summary>
+            Call this method at the end of Application.OnLaunched with the same parameter as OnLaunched.
+            This method call is needed to handle click on push to trigger the portable PushNotificationReceived event.
+            </summary>
+            <param name="e">OnLaunched method event args</param>
+        </member>
+        <member name="M:Microsoft.AppCenter.Push.Push.ApplyEnabledState(System.Boolean)">
+            <summary>
+            If enabled, register push channel and send URI to backend.
+            Also start intercepting pushes.
+            If disabled and previously enabled, stop listening for pushes (they will still be received though).
+            </summary>
+        </member>
+        <member name="M:Microsoft.AppCenter.Push.Push.OnChannelGroupReady(Microsoft.AppCenter.Channel.IChannelGroup,System.String)">
+            <summary>
+            Method that is called to signal start of the Push service.
+            </summary>
+            <param name="channelGroup"></param>
+            <param name="appSecret"></param>
+        </member>
+        <member name="M:Microsoft.AppCenter.Push.Push.IsEnabledAsync">
+            <summary>
+            Check whether the Push service is enabled or not.
+            </summary>
+            <returns>A task with result being true if enabled, false if disabled.</returns>
+        </member>
+        <member name="M:Microsoft.AppCenter.Push.Push.SetEnabledAsync(System.Boolean)">
+            <summary>
+            Enable or disable the Push service.
+            </summary>
+            <returns>A task to monitor the operation.</returns>
+        </member>
+        <member name="E:Microsoft.AppCenter.Push.Push.PushNotificationReceived">
+            <summary>
+            Occurs when the application receives a push notification.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AppCenter.Push.Ingestion.Models.PushInstallationLog.#ctor">
+            <summary>
+            Initializes a new instance of the PushInstallationLog class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AppCenter.Push.Ingestion.Models.PushInstallationLog.#ctor(System.Nullable{System.DateTime},Microsoft.AppCenter.Ingestion.Models.Device,System.String,System.Nullable{System.Guid})">
+            <summary>
+            Initializes a new instance of the PushInstallationLog class.
+            </summary>
+            <param name="pushToken">The PNS handle for this installation.
+            </param>
+            <param name="timestamp">Log timestamp, example:
+            '2017-03-13T18:05:42Z'.
+            </param>
+            <param name="sid">When tracking an analytics session, logs can be
+            part of the session by specifying this identifier.
+            This attribute is optional, a missing value means the session
+            tracking is disabled (like when using only error reporting
+            feature).
+            Concrete types like StartSessionLog or PageLog are always part of a
+            session and always include this identifier.
+            </param>
+        </member>
+        <member name="P:Microsoft.AppCenter.Push.Ingestion.Models.PushInstallationLog.PushToken">
+             <summary>
+             Gets or sets the PNS handle for this installation.
+            
+             </summary>
+        </member>
+        <member name="M:Microsoft.AppCenter.Push.Ingestion.Models.PushInstallationLog.Validate">
+            <summary>
+            Validate the object.
+            </summary>
+            <exception cref="T:Microsoft.AppCenter.Ingestion.Models.ValidationException">
+            Thrown if validation fails
+            </exception>
+        </member>
+        <member name="T:Microsoft.AppCenter.Push.PushNotificationReceivedEventArgs">
+            <summary>
+            Event args for event that occurs when a push notification is received.
+            </summary>
+            <seealso cref="E:Microsoft.AppCenter.Push.Push.PushNotificationReceived"/>
+        </member>
+        <member name="F:Microsoft.AppCenter.Push.PushNotificationReceivedEventArgs.CustomData">
+            <summary>
+            Custom data attached to the push message.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AppCenter.Push.PushNotificationReceivedEventArgs.Title">
+            <summary>
+            Title of the push message.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AppCenter.Push.PushNotificationReceivedEventArgs.Message">
+            <summary>
+            Body of the push message
+            </summary>
+        </member>
+    </members>
+</doc>

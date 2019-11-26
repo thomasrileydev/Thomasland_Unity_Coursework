@@ -8,7 +8,6 @@ public class ControllerScript : MonoBehaviour {
     public HealthScript HealthScript;
     private int RegenerationHealth=1;
     public int RegenTimer;
-
     private int counter = 0;
     public void Start()
     {
@@ -20,9 +19,10 @@ public class ControllerScript : MonoBehaviour {
     }
     public void Update()
     {
-        
-    
+
+
         bool MenuActive = Input.GetButtonDown("Menu");
+
         if (MenuActive==true)
         {
             counter++;

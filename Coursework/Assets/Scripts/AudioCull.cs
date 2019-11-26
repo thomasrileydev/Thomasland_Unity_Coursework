@@ -14,6 +14,14 @@ public class AudioCull : MonoBehaviour {
     public AudioSource MountainousAudio;
     public AudioClip MountainousAudioClip;
 
+    public void Start()
+    {
+        ForestAudio.clip = ForestAudioClip;
+        GrasslandAudio.clip = GrasslandAudioClip;
+        HillsAudio.clip = HillsAudioClip;
+        DesertAudio.clip = DesertAudioClip;
+        MountainousAudio.clip = MountainousAudioClip;
+    }
 
 
 
@@ -26,7 +34,6 @@ public class AudioCull : MonoBehaviour {
             HillsAudio.Stop();
             DesertAudio.Stop();
             MountainousAudio.Stop();
-            ForestAudio.clip = ForestAudioClip;
             ForestAudio.Play();
             
         }
@@ -37,7 +44,6 @@ public class AudioCull : MonoBehaviour {
             HillsAudio.Stop();
             DesertAudio.Stop();
             MountainousAudio.Stop();
-            GrasslandAudio.clip = GrasslandAudioClip;
             GrasslandAudio.Play();
         }
         if (other.gameObject.CompareTag("HillsBoundary"))
@@ -47,7 +53,6 @@ public class AudioCull : MonoBehaviour {
             HillsAudio.Stop();
             DesertAudio.Stop();
             MountainousAudio.Stop();
-            HillsAudio.clip = HillsAudioClip;
             HillsAudio.Play();
         }
         if (other.gameObject.CompareTag("DesertBoundary"))
@@ -57,7 +62,6 @@ public class AudioCull : MonoBehaviour {
             HillsAudio.Stop();
             DesertAudio.Stop();
             MountainousAudio.Stop();
-            DesertAudio.clip = DesertAudioClip;
             DesertAudio.Play();
         }
         if (other.gameObject.CompareTag("MountainousBoundary"))
@@ -66,7 +70,7 @@ public class AudioCull : MonoBehaviour {
             GrasslandAudio.Stop();
             HillsAudio.Stop();
             DesertAudio.Stop();
-            MountainousAudio.clip = MountainousAudioClip;
+            MountainousAudio.Stop();
             MountainousAudio.Play();
         }
 
