@@ -15,8 +15,8 @@ public class Save : MonoBehaviour {
     private void RemoveAllListeners()
     {
         
-        SaveTextfile.WriteString();
-
+            SaveTextfile.WriteString();
+            
     }
 
     void Click()

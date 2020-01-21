@@ -9,10 +9,10 @@ public class HealthScript : MonoBehaviour {
     [HideInInspector] public int Battery=100;
     public Slider HealthSlider;
     public Slider BatterySlider;
-    public Image FillImageHealth;
-    public Image FillImageBattery;
-    public Color FullHealthColour;
-    public Color DamageColour;
+    //public Image FillImageHealth;   These were for making health and battery bars which change colour and size but were not needed
+    //public Image FillImageBattery;
+    //public Color FullHealthColour;
+    //public Color DamageColour;
     public DeathScript DeathScript;
     public void Start()
     {

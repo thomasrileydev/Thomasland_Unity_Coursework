@@ -10,10 +10,20 @@ public class StartGameButton : MonoBehaviour {
     {
         StartGame.onClick.AddListener(Click);
 
+
     }
-    public void Click()
+    private void RemoveAllListeners()
     {
+
         SceneManager.LoadScene("Final Game", LoadSceneMode.Single);
+
+    }
+
+    void Click()
+    {
+
+        RemoveAllListeners();
+
     }
 
 }

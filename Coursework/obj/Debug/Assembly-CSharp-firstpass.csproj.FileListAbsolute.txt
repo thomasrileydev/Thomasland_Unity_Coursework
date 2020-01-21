@@ -28,7 +28,6 @@ C:\Users\riley\Documents\unity\Coursework\Temp\bin\Debug\UnityEngine.Timeline.xm
 C:\Users\riley\Documents\unity\Coursework\Temp\bin\Debug\UnityEngine.Analytics.xml
 C:\Users\riley\Documents\unity\Coursework\Temp\bin\Debug\UnityEngine.HoloLens.xml
 C:\Users\riley\Documents\unity\Coursework\obj\Debug\Assembly-CSharp-firstpass.csprojAssemblyReference.cache
-C:\Users\riley\Documents\unity\Coursework\obj\Debug\Assembly-CSharp-firstpass.csproj.CoreCompileInputs.cache
 C:\Users\riley\Documents\unity\Coursework\obj\Debug\Assembly-CSharp-firstpass.csproj.CopyComplete
 C:\Users\riley\Documents\unity\Coursework\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\riley\Documents\unity\Coursework\obj\Debug\Assembly-CSharp-firstpass.pdb

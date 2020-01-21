@@ -26,6 +26,7 @@ public class RocketParts : MonoBehaviour {
 
     public Slider RocketProgress;
     //public void Start() { Collected1 = true; Collected2 = true; Collected3 = true; Collected4 = true; Rocket.SetActive(true); }
+    //This line was used for testing - it assembled a complete rocket at the start of the game
     public void OnTriggerEnter(Collider other)
     {
        

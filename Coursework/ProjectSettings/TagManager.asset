@@ -27,6 +27,7 @@ TagManager:
   - Box3
   - Box4
   - Rocket
+  - WaterDeath
   layers:
   - Default
   - TransparentFX
@@ -42,7 +43,7 @@ TagManager:
   - Ground
   - Objects
   - AI
-  - 
+  - Death
   - 
   - 
   - 

@@ -21,11 +21,13 @@ public class RocketLaunch : MonoBehaviour {
 
     public GameObject LaunchCamera;
     public GameObject OnboardCamera;
-    public AudioClip DistantRocketNoise;
-    public AudioClip OnboardRocketNoise;
+
+    public AudioSource RocketNoise;
+    public AudioCull AudioCull;
 
     public void  CountdownInitialize()
     {
+        AudioCull.GrasslandAudio.Stop();
         LaunchCamera.SetActive(true);
         Player.SetActive(false);
         Enemy.SetActive(false);
@@ -38,7 +40,10 @@ public class RocketLaunch : MonoBehaviour {
         CountdownValue--;
         CountdownClock.text = CountdownValue.ToString();
         yield return new WaitForSeconds(1);
-
+        if (CountdownValue == 6)
+        {
+            RocketNoise.Play();
+        }
         if (CountdownValue > 0)
         {
             StartCoroutine(Countdown());
@@ -53,11 +58,13 @@ public class RocketLaunch : MonoBehaviour {
             yield return new WaitForSeconds(15);
             OnboardCamera.SetActive(true);
             LaunchCamera.SetActive(false);
-            yield return new WaitForSeconds(25);
-            OnboardCamera.SetActive(false);
-            Rocket.SetActive(false);
+            yield return new WaitForSeconds(20);
+            CountdownClock.text = "Well done, you escaped! Now restarting...";
+            yield return new WaitForSeconds(5);
+            //OnboardCamera.SetActive(false);
+            //Rocket.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene("StartScreen", LoadSceneMode.Single);
+            SceneManager.LoadScene("Final Game", LoadSceneMode.Single);
 
 
 

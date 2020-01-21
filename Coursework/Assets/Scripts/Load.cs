@@ -23,6 +23,8 @@ public class Load : MonoBehaviour {
         //SceneManager.LoadScene("Final Game", LoadSceneMode.Single);
         StartCoroutine(LoadTextfile.ReadString());
         LoadTextfile.Reinstate();
+
+        //LoadTextfile.Reinstate(); Hashed out so it can only now be called once per load from Loadtextfile
     }
 
     void Click()

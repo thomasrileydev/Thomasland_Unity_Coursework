@@ -65,6 +65,7 @@
      <Compile Include="Assets\AppCenter\AppCenterBehaviorAdvanced.cs" />
      <Compile Include="Assets\AppCenter\AppCenterSettings.cs" />
      <Compile Include="Assets\AppCenter\AppCenterSettingsAdvanced.cs" />
+     <Compile Include="Assets\AppCenter\AppCentreLoader.cs" />
      <Compile Include="Assets\AppCenter\Plugins\Android\Utility\AndroidUtility.cs" />
      <Compile Include="Assets\AppCenter\Plugins\Android\Utility\JavaDateHelper.cs" />
      <Compile Include="Assets\AppCenter\Plugins\Android\Utility\JavaNumberHelper.cs" />
@@ -224,6 +225,7 @@
      <Compile Include="Assets\Scripts\Test Script\SaveButtonTest.cs" />
      <Compile Include="Assets\Scripts\Test Script\SaveRoutine.cs" />
      <Compile Include="Assets\Scripts\Test Script\WaterDetection.cs" />
+     <Compile Include="Assets\Scripts\WaterDeath.cs" />
      <Compile Include="Assets\Scripts\WrenchScript.cs" />
      <Compile Include="Assets\Stagit\SkyboxEarthPlanets\script\skyboxspace_demo_v1.cs" />
      <Compile Include="Assets\Stagit\SkyboxEarthPlanets\script\skyboxspace_mouselook_v1.cs" />
@@ -268,11 +270,13 @@
      <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.95.0.txt" />
      <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Wispy Sky\ReadMe.txt" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
      <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
+     <None Include="Assets\Plugins\Android\res\values\appcenter-settings.xml" />
      <None Include="Assets\Robo3\Animations\Robo3 animations list.txt" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
  <Reference Include="UnityEngine.UI">

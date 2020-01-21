@@ -25,7 +25,7 @@ public class DayNight : MonoBehaviour {
         {
             currentTimeOfDay = 0;
         }
-        if (currentTimeOfDay >= 0.75)
+        if (currentTimeOfDay < 0.25 || currentTimeOfDay >= 0.75)
         {
             PlayerLight.SetActive (true);   
             

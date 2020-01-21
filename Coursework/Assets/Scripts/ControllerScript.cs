@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ControllerScript : MonoBehaviour {
     public GameObject Menu;
@@ -9,6 +10,11 @@ public class ControllerScript : MonoBehaviour {
     private int RegenerationHealth=1;
     public int RegenTimer;
     private int counter = 0;
+    public Text InfoText;
+    public SaveTextfile SaveTextfile;
+    public LoadTextfile LoadTextfile;
+    public GameObject FPSCounter;
+
     public void Start()
     {
         Menu.SetActive(false);
@@ -16,6 +22,8 @@ public class ControllerScript : MonoBehaviour {
         Physics.IgnoreLayerCollision(4, 8);
         Physics.IgnoreLayerCollision(4, 12);
         Physics.IgnoreLayerCollision(4, 9);
+        InfoText.text = "Esc or Menu for instructions and game menu";
+        StartCoroutine(InfoBoxUpdate());
     }
     public void Update()
     {
@@ -29,6 +37,11 @@ public class ControllerScript : MonoBehaviour {
             if (counter==1)
             {
                 Menu.SetActive(true);
+                if (Input.GetButtonDown("Debug"))
+                {
+                    FPSCounter.SetActive(true);
+                }
+                Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
                 Time.timeScale = 0;
             }
@@ -36,7 +49,12 @@ public class ControllerScript : MonoBehaviour {
             {
                 Menu.SetActive(false);
                 Time.timeScale = 1;
+                Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
+                SaveTextfile.Saved = false;
+                LoadTextfile.Loaded = false;
+                LoadTextfile.Reinstated = false;
+                InfoText.text = "";
                 counter = 0;
             }
             /*if (Options.activeSelf == true)
@@ -50,7 +68,9 @@ public class ControllerScript : MonoBehaviour {
                     counter = 0;
                 }
             }*/
+
         }
+
     }
     public IEnumerator RegenHealth() //for wrench script called when spanners collected to regenerate health
     {
@@ -69,6 +89,13 @@ public class ControllerScript : MonoBehaviour {
     public void InitializeRegen() 
     {
         StartCoroutine(RegenHealth());
+    }
+
+    public IEnumerator InfoBoxUpdate()
+    {
+        yield return new WaitForSeconds(5);
+        InfoText.text = "";
+        StartCoroutine(InfoBoxUpdate());
     }
 
 }

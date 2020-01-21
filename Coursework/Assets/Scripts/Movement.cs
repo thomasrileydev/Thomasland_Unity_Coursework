@@ -48,6 +48,7 @@ public class Movement : MonoBehaviour {
         Vector3 MovementJump = new Vector3(0.0f, JumpMovement, 0.0f);
         Rigidbody RB = GetComponent<Rigidbody>();
         bool Jump = Input.GetButtonDown("Jump");
+        Debug.Log(Jump);
         if (other.gameObject.layer == 11)
         {
             if (Jump == true)

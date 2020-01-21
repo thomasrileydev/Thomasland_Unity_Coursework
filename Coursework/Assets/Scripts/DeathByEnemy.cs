@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class DeathByEnemy : MonoBehaviour {
     public HealthScript healthscript;
+    public AudioSource DamageAudio;
 public void OnTriggerStay(Collider other) {
         if (other.CompareTag("Enemy"))
         {
-            healthscript.Health = healthscript.Health -1;
+            if (DamageAudio.isPlaying == false)
+            {
+                DamageAudio.Play();
+            }
+                healthscript.Health = healthscript.Health - 1;
         }
-    }
+    }   
 /*public IEnumerator DamageTimer()
     {
         healthscript.Health = healthscript.Health - 25;
