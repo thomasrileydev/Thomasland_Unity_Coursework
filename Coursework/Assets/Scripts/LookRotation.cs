@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*This script controls the horizontal rotation of PlayerCamera. It allows a full 360 degrees
+ * of rotation at a speed set in the inspector. It uses inputs from the mouse or pointer 
+ * and the right stick on the game controller, only using the horizontal component (x axis)
+ */
+
 public class LookRotation : MonoBehaviour {
     public float Speed;
     private void FixedUpdate()

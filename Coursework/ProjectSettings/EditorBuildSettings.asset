@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Final Game.unity
     guid: f0831daa4b464f049971b07167c25214
+  - enabled: 1
+    path: Assets/Cube.unity
+    guid: 4741eca59c4b13c46b1611741720b0e7

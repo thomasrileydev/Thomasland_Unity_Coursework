@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*This script controls two key operations: Player death and respawning.
+ * When Player 'dies' the Player game object gets deactivated, at the same time DeathCam is
+ * turned on which is a camera looking at nothing but with an overlay
+ * which displays a message. After 3 seconds Player respawns, this is
+ * controlled by respawncountdown and respawn. Respawn makes Player
+ * active again, moves Player to the start position on its charging pad
+ * and moves Enemy to its starting position. It also turns off deathcam and 
+ * restores player health to 100 */
+
 public class DeathScript : MonoBehaviour {
     public GameObject Player;
     public Transform PlayerTransform;

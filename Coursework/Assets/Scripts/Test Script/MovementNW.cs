@@ -1,4 +1,4 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,11 +12,11 @@ public class MovementNW : MonoBehaviour {
         Rigidbody RB = GetComponent<Rigidbody>();
         float MoveVertical = Input.GetAxis("Vertical");
         float MoveHorizontal = Input.GetAxis("Horizontal");
-        Vector3 Movement = new Vector3(MoveHorizontal*transform.forward.x, 0.0f, MoveVertical*transform.forward.z);
-        if (MoveVertical != 0)
-        {
-            RB.velocity = transform.forward * Speed * MoveVertical;
-        }
+        Vector3 Movement = new Vector3(MoveHorizontal*Speed, 0.0f, MoveVertical*Speed);
+
+
+        RB.velocity = Movement;
+        
 
     }
 
@@ -33,5 +33,5 @@ public class MovementNW : MonoBehaviour {
             }
         }
     }
-}*/
+}
  

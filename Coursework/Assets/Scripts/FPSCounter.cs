@@ -2,6 +2,12 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*This script calculates and displays the FPS rate. It is assigned
+ * to the Unity text object FPS Counter. This script came from 
+ * the standard assets library for Unity. It calculates the average
+ * FPS by dividing the number of frames in a period by the time taken
+ * to draw them*/
+
 namespace UnityStandardAssets.Utility
 {
     [RequireComponent(typeof (Text))]

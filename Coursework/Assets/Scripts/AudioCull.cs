@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*This script changes the background audio track when Player crosses into another biome. Each time this
+ * happens, it cuts all background audio and then plays the desired one. I could have probably have improved the
+ * efficiency of this given more time but it works.
+ */
+
 public class AudioCull : MonoBehaviour {
     public AudioSource ForestAudio;
     public AudioClip ForestAudioClip;

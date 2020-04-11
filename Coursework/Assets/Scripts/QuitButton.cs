@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+/*This script quits the application and is called by the Quit button
+ * in the Menu. */
+
 public class QuitButton : MonoBehaviour {
     public Button Quit;
 
@@ -10,6 +14,6 @@ public class QuitButton : MonoBehaviour {
     }
     void Click()
     {
-        Application.Quit();
+        Application.Quit(); //The command quits the application
     }
 }

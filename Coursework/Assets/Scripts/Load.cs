@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/*This script manages the 'Load' button and calls the routines ReadString and
+ * Reinstate in the LoadTextfile script when the button is pressed. */
+
 public class Load : MonoBehaviour {
     public Button LoadButton;
     public LoadTextfile LoadTextfile;
